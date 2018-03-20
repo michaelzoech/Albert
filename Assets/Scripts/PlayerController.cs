@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (playerInput.Jump) {
+        if (playerInput.Jump && characterController.isGrounded) {
             velocity.y += Mathf.Sqrt(JumpHeight * -2f * Gravity);
         }
 
