@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour {
         }
 
         Vector3 move = new Vector3(playerInput.HorizontalMovement, 0.0f, playerInput.VerticalMovement);
+        Quaternion q = Quaternion.Euler(0.0f, -45.0f, 0.0f);
+        move = q * move;
         //characterController.Move(move * MoveSpeed * Time.deltaTime);
         velocity += move * MoveSpeed * Time.deltaTime;
         if (move != Vector3.zero) {
