@@ -536,7 +536,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d4ceaed2914b7345bd9a2f188b644f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d4ceaed2914b7345bd9a2f188b644f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -564,15 +564,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d4ceaed2914b7345bd9a2f188b644f3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d4ceaed2914b7345bd9a2f188b644f3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d4ceaed2914b7345bd9a2f188b644f3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 95
+      value: 140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d4ceaed2914b7345bd9a2f188b644f3, type: 3}
@@ -1457,7 +1457,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1366978305}
   m_LocalRotation: {x: 0.35355338, y: -0.35355338, z: 0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: 6, y: 9, z: -6}
+  m_LocalPosition: {x: 9.09, y: 17.3, z: -8.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1913,7 +1913,7 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 256
-  Gravity: -9.82
+  Gravity: -18
   Drag: {x: 1, y: 1, z: 1}
 --- !u!4 &1917340943
 Transform:
@@ -1941,8 +1941,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.6
+  m_Height: 3
+  m_Radius: 0.9
   m_SlopeLimit: 50
   m_StepOffset: 0.3
   m_SkinWidth: 0.08

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     private const float JumpHeight = 1.0f;
-    private const float MoveSpeed = 5.0f;
+    private const float MoveSpeed = 15.0f;
     private const float DashDistance = 2.0f;
 
     public LayerMask Ground;
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour {
 
                 if (d <= 0.0f) {
                     moveDrag = 1.0f - hit.normal.y;
-                    moveDrag *= 10.0f;
+                    moveDrag *= 20.0f;
                 } else {
                     velocity += 2.0f * velocity * Time.deltaTime;
                 }
