@@ -4,21 +4,57 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour {
 
-	private bool triggered;
+	public Goal Goal;
+	public Trigger[] Disable;
+	public Trigger[] Enable;
+	public bool Triggered;
+
+	private float initialScaleY;
+	private bool inTriggerRecursion;
 
 	void Start() {
-		triggered = false;
+		initialScaleY = transform.localScale.y;
+		if (Goal != null) {
+			Goal.RegisterTrigger(this);
+		}
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (triggered) {
+		if (Triggered) {
 			return;
 		}
+
 		if (other.tag == "Player") {
-			Vector3 scale = transform.localScale;
-			scale.y = 0.05f;
-			transform.localScale = scale;
-			triggered = true;
+			UpdateTriggerState(true);
 		}
+	}
+
+	void UpdateTriggerState(bool newState) {
+		Conditions.Assert(!(inTriggerRecursion & newState), "Recursion in trigger, backing out");
+		inTriggerRecursion = true;
+
+		Triggered = newState;
+
+		Vector3 scale  = transform.localScale;
+		scale.y = Triggered ? initialScaleY / 5.0f : initialScaleY;
+		transform.localScale = scale;
+
+		if (Goal != null) {
+			Goal.Trigger(this);
+		}
+
+		if (Triggered && Disable != null) {
+			foreach (Trigger trigger in Disable) {
+				trigger.UpdateTriggerState(false);
+			}
+		}
+
+		if (Triggered && Enable != null) {
+			foreach (Trigger trigger in Enable) {
+				trigger.UpdateTriggerState(true);
+			}
+		}
+
+		inTriggerRecursion = false;
 	}
 }

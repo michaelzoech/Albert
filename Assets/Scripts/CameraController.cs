@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour {
+public class CameraController : MonoBehaviour {
 
     public GameObject Object;
     public Vector3 Distance;
     public float Follow = 0.2f;
 
-    private Vector3 initialDistance;
-
     void Start() {
-        initialDistance = transform.position - Object.transform.position;
     }
 
     void Update() {

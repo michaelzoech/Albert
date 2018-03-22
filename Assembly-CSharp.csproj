@@ -52,12 +52,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnimRotator.cs" />
-     <Compile Include="Assets\Scripts\Camera.cs" />
+     <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CollectFuel.cs" />
+     <Compile Include="Assets\Scripts\ColorOnTrigger.cs" />
+     <Compile Include="Assets\Scripts\Conditions.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Goal.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
+     <Compile Include="Assets\Scripts\Portal.cs" />
+     <Compile Include="Assets\Scripts\ScaleOnTrigger.cs" />
      <Compile Include="Assets\Scripts\Trigger.cs" />
      <None Include="Assets\Shaders\GoalShader.shader" />
  <Reference Include="UnityEngine.UI">
