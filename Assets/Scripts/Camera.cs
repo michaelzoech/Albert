@@ -5,6 +5,7 @@ using UnityEngine;
 public class Camera : MonoBehaviour {
 
     public GameObject Object;
+    public Vector3 Distance;
     public float Follow = 0.2f;
 
     private Vector3 initialDistance;
@@ -14,7 +15,7 @@ public class Camera : MonoBehaviour {
     }
 
     void Update() {
-        Vector3 wantedPosition = Object.transform.position + initialDistance;
+        Vector3 wantedPosition = Object.transform.position + Distance;
         transform.position = Vector3.Lerp(transform.position, wantedPosition, Follow);
     }
 }
