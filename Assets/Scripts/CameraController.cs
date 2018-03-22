@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour {
     public float Follow = 0.2f;
 
     void Start() {
+        transform.position = Object.transform.position + Distance;
     }
 
     void Update() {
