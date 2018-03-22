@@ -7,10 +7,18 @@ public class GameController : MonoBehaviour {
 
 	public Text ScoreText;
 
+	public GameObject debugPanel;
+
 	private int fuelCollected;
 
 	void Start () {
 		fuelCollected = 0;
+	}
+
+	void Update() {
+		if (Input.GetKeyDown(KeyCode.F1)) {
+			debugPanel.SetActive(!debugPanel.activeSelf);
+		}
 	}
 
 	public void OnFuelCollected() {
