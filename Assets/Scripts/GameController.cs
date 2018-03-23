@@ -25,4 +25,8 @@ public class GameController : MonoBehaviour {
 		fuelCollected++;
 		ScoreText.text = "Score: " + fuelCollected;
 	}
+
+	public void GameOver() {
+		Debug.Log("Game Over");
+	}
 }

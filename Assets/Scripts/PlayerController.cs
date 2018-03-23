@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
     void Start() {
         characterController = GetComponent<CharacterController>();
         //characterController.enableOverlapRecovery = true;
+        characterController.detectCollisions = true;
         playerInput = GetComponent<PlayerInput>();
         velocity = new Vector3();
 
