@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour {
 
-	public Goal Goal;
+	public TriggerTarget Target;
 	public Trigger[] Disable;
 	public Trigger[] Enable;
 	public bool Triggered;
@@ -14,8 +14,8 @@ public class Trigger : MonoBehaviour {
 
 	void Start() {
 		initialScaleY = transform.localScale.y;
-		if (Goal != null) {
-			Goal.RegisterTrigger(this);
+		if (Target != null) {
+			Target.RegisterTrigger(this);
 		}
 	}
 
@@ -39,8 +39,8 @@ public class Trigger : MonoBehaviour {
 		scale.y = Triggered ? initialScaleY / 5.0f : initialScaleY;
 		transform.localScale = scale;
 
-		if (Goal != null) {
-			Goal.Trigger(this);
+		if (Target != null) {
+			Target.Trigger(this);
 		}
 
 		if (Triggered && Disable != null) {

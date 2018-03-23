@@ -7,51 +7,32 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour {
 
-	public bool Enabled;
-
-	private HashSet<Trigger> allTriggers = new HashSet<Trigger>();
-	private HashSet<Trigger> enabledTriggers = new HashSet<Trigger>();
+	private TriggerTarget triggerTarget;
 	private GameController gameController;
+
+	private bool previousEnabled;
 
 	void Start() {
 		gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+		triggerTarget = GetComponent<TriggerTarget>();
+	}
 
-		if (Enabled) {
-			SetEnabled(Enabled);
+	void Update() {
+		if (triggerTarget != null && previousEnabled != triggerTarget.Enabled) {
+			SetEnabled(triggerTarget.Enabled);
+			previousEnabled = triggerTarget.Enabled;
 		}
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (!Enabled) {
+		if (triggerTarget != null && !triggerTarget.Enabled) {
 			return;
 		}
 		Debug.Log("Hit at " + Time.time);
 	}
 
-	public void RegisterTrigger(Trigger trigger) {
-		Conditions.Assert(!allTriggers.Contains(trigger), "Trying to register trigger, but trigger already registered");
-
-		allTriggers.Add(trigger);
-		if (trigger.Triggered) {
-			enabledTriggers.Add(trigger);
-		}
-		SetEnabled(enabledTriggers.Count == allTriggers.Count());
-	}
-
-	public void Trigger(Trigger trigger) {
-		Conditions.Assert(allTriggers.Contains(trigger), "Goal triggered by unknown trigger");
-
-		if (!enabledTriggers.Remove(trigger)) {
-			enabledTriggers.Add(trigger);
-		}
-
-		SetEnabled(enabledTriggers.Count == allTriggers.Count());
-	}
-
-	private void SetEnabled(Boolean enabled) {
-		Enabled = enabled;
-
+	private void SetEnabled(bool enabled) {
 		Material m = GetComponentInChildren<Renderer>().material;
-		m.SetFloat("_Animate", Enabled ? 1.0f : 0.0f);
+		m.SetFloat("_Animate", enabled ? 1.0f : 0.0f);
 	}
 }
