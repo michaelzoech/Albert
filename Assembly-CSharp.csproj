@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnimRotator.cs" />
+     <Compile Include="Assets\Scripts\AudioOnTrigger.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CollectFuel.cs" />
      <Compile Include="Assets\Scripts\ColorOnTrigger.cs" />
