@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioOnTrigger : MonoBehaviour {
 
-	private AudioSource audio;
+	new private AudioSource audio;
 	private Trigger trigger;
 
 	private bool played;

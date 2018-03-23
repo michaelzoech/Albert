@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour {
                     moveDrag = 1.0f - hit.normal.y;
                     moveDrag *= 20.0f;
                 } else {
+                    // Needs to be relative to vel dot direction down vector, same for up?
+                    // E.g. moving across a slope
                     velocity += 2.0f * velocity * Time.deltaTime;
                 }
             }
