@@ -3,5 +3,6 @@
 /obj/
 /Temp/
 
-*.userprefs
+*.bak
 *.blend1
+*.userprefs
