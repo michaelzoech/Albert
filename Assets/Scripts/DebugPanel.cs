@@ -20,6 +20,12 @@ public class DebugPanel : MonoBehaviour {
             playerController.gameObject.transform.position = portals[position].transform.position + new Vector3(0.0f, 2.0f, 0.0f);
 		});
 
+		Toggle deathOnFall = GameObject.Find("Death On Fall Toggle").GetComponent<Toggle>();
+		deathOnFall.isOn = playerController.DeathOnFall;
+		deathOnFall.onValueChanged.AddListener(isOn => {
+			playerController.DeathOnFall = isOn;
+		});
+
 		gameObject.SetActive(false);
 	}
 	

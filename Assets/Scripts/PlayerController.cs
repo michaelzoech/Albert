@@ -8,9 +8,14 @@ public class PlayerController : MonoBehaviour {
     private const float MoveSpeed = 15.0f;
     private const float DashDistance = 2.0f;
 
+    public bool DeathOnFall { get { return deathOnFall; } set { deathOnFall = value; } }
+
     public LayerMask Ground;
     public float Gravity;
     public Vector3 Drag;
+
+    [SerializeField]
+    private bool deathOnFall = true;
 
     private GameController gameController;
     private CharacterController characterController;
@@ -35,7 +40,7 @@ public class PlayerController : MonoBehaviour {
             lastHeightGrounded = transform.position.y;
         }
 
-        if (lastHeightGrounded > transform.position.y + 4.5f) {
+        if (deathOnFall && lastHeightGrounded > transform.position.y + 4.5f) {
             gameController.GameOver();
         }
 
