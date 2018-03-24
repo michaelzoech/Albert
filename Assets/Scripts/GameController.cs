@@ -6,14 +6,19 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
+	[SerializeField]
+	private AudioClip gameOverAudio;
 	public Text ScoreText;
 
 	public GameObject debugPanel;
 
+	private AudioSource audioSource;
 	private int fuelCollected;
+	private bool isGameOver;
 
 	void Start () {
 		fuelCollected = 0;
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	void Update() {
@@ -28,6 +33,16 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameOver() {
-		SceneManager.LoadScene("Level01");
+		if (isGameOver) {
+			return;
+		}
+		isGameOver = true;
+		StartCoroutine(LoadLevel());
+	}
+
+	private IEnumerator LoadLevel() {
+		audioSource.PlayOneShot(gameOverAudio);
+		yield return new WaitForSeconds(gameOverAudio.length + 1.0f);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 }
