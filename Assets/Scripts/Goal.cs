@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using System.Linq;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour {
 
@@ -28,7 +29,7 @@ public class Goal : MonoBehaviour {
 		if (triggerTarget != null && !triggerTarget.Enabled) {
 			return;
 		}
-		Debug.Log("Hit at " + Time.time);
+		SceneManager.LoadScene("Outro");
 	}
 
 	private void SetEnabled(bool enabled) {
