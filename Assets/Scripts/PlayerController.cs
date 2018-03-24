@@ -22,18 +22,20 @@ public class PlayerController : MonoBehaviour {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         characterController = GetComponent<CharacterController>();
         //characterController.enableOverlapRecovery = true;
-        characterController.detectCollisions = true;
+        //characterController.detectCollisions = true;
         playerInput = GetComponent<PlayerInput>();
         velocity = new Vector3();
     }
 
     void Update() {
+        velocity = characterController.velocity;
+
         if (characterController.isGrounded) {
             velocity.y = 0.0f;
             lastHeightGrounded = transform.position.y;
         }
 
-        if (lastHeightGrounded > transform.position.y + 3.5f) {
+        if (lastHeightGrounded > transform.position.y + 4.5f) {
             gameController.GameOver();
         }
 
@@ -61,8 +63,7 @@ public class PlayerController : MonoBehaviour {
                 float d = Vector3.Dot(dir, hit.normal);
 
                 if (d <= 0.0f) {
-                    moveDrag = 1.0f - hit.normal.y;
-                    moveDrag *= 20.0f;
+                    moveDrag = Mathf.Abs(d) * 5.0f;
                 } else {
                     // Needs to be relative to vel dot direction down vector, same for up?
                     // E.g. moving across a slope
@@ -83,7 +84,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         velocity.y += Gravity * Time.deltaTime;
-
+ 
         velocity.x /= 1 + (moveDrag + Drag.x) * Time.deltaTime;
         velocity.y /= 1 + (moveDrag + Drag.y) * Time.deltaTime;
         velocity.z /= 1 + (moveDrag + Drag.z) * Time.deltaTime;
