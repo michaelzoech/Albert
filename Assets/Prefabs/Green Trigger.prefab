@@ -196,7 +196,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7517dbd989b6d84488db78019b85a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Goal: {fileID: 0}
+  Target: []
   Disable: []
   Enable: []
   Triggered: 0

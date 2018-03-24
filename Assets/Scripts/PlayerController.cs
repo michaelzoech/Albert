@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour {
 
     public bool DeathOnFall { get { return deathOnFall; } set { deathOnFall = value; } }
 
-    public LayerMask Ground;
-    public float Gravity;
-    public Vector3 Drag;
-
+    [SerializeField]
+    private LayerMask ground;
+    [SerializeField]
+    private float gravity;
+    [SerializeField]
+    private Vector3 drag;
     [SerializeField]
     private bool deathOnFall = true;
 
@@ -58,7 +60,7 @@ public class PlayerController : MonoBehaviour {
         RaycastHit hit;
         float moveDrag = 0.0f;
 
-        if (Physics.Raycast(downRay, out hit, maxDistance, Ground)) {
+        if (Physics.Raycast(downRay, out hit, maxDistance, ground)) {
             if (hit.normal.y < 0.95f) {
                 // We are on a slope, lets see if we are moving down or up
                 Vector3 dir = velocity.normalized;
@@ -78,21 +80,21 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (playerInput.Jump && characterController.isGrounded) {
-            velocity.y += Mathf.Sqrt(JumpHeight * -2f * Gravity);
+            velocity.y += Mathf.Sqrt(JumpHeight * -2f * gravity);
         }
 
         if (playerInput.Dash) {
             velocity += Vector3.Scale(transform.forward, DashDistance * new Vector3(
-                Mathf.Log(1.0f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime,
+                Mathf.Log(1.0f / (Time.deltaTime * drag.x + 1)) / -Time.deltaTime,
                 0.0f,
-                Mathf.Log(1.0f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime));
+                Mathf.Log(1.0f / (Time.deltaTime * drag.z + 1)) / -Time.deltaTime));
         }
 
-        velocity.y += Gravity * Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime;
  
-        velocity.x /= 1 + (moveDrag + Drag.x) * Time.deltaTime;
-        velocity.y /= 1 + (moveDrag + Drag.y) * Time.deltaTime;
-        velocity.z /= 1 + (moveDrag + Drag.z) * Time.deltaTime;
+        velocity.x /= 1 + (moveDrag + drag.x) * Time.deltaTime;
+        velocity.y /= 1 + (moveDrag + drag.y) * Time.deltaTime;
+        velocity.z /= 1 + (moveDrag + drag.z) * Time.deltaTime;
 
         characterController.Move(velocity * Time.deltaTime);
     }

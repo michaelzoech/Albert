@@ -371,7 +371,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114266386823562310, guid: 5d088891a6dd7da44aafc8c7d44ce759,
         type: 2}
-      propertyPath: Disable.Array.size
+      propertyPath: disable.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4872207287727574, guid: 5d088891a6dd7da44aafc8c7d44ce759, type: 2}
@@ -412,7 +412,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114266386823562310, guid: 5d088891a6dd7da44aafc8c7d44ce759,
         type: 2}
-      propertyPath: Disable.Array.data[0]
+      propertyPath: disable.Array.data[0]
       value: 
       objectReference: {fileID: 1090450693}
     - target: {fileID: 82749340524127344, guid: 5d088891a6dd7da44aafc8c7d44ce759,
@@ -423,6 +423,11 @@ Prefab:
     - target: {fileID: 114266386823562310, guid: 5d088891a6dd7da44aafc8c7d44ce759,
         type: 2}
       propertyPath: Triggered
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266386823562310, guid: 5d088891a6dd7da44aafc8c7d44ce759,
+        type: 2}
+      propertyPath: triggered
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1441,7 +1446,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114300387737479862, guid: 18c94775555ffe6458319fdb30aaa615,
         type: 2}
-      propertyPath: Target.Array.size
+      propertyPath: target.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4517896732595490, guid: 18c94775555ffe6458319fdb30aaa615, type: 2}
@@ -1488,12 +1493,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114300387737479862, guid: 18c94775555ffe6458319fdb30aaa615,
         type: 2}
-      propertyPath: Target.Array.data[0]
+      propertyPath: target.Array.data[0]
       value: 
       objectReference: {fileID: 24352130}
     - target: {fileID: 114300387737479862, guid: 18c94775555ffe6458319fdb30aaa615,
         type: 2}
-      propertyPath: Target.Array.data[1]
+      propertyPath: target.Array.data[1]
       value: 
       objectReference: {fileID: 336131156}
     - target: {fileID: 82352680639761408, guid: 18c94775555ffe6458319fdb30aaa615,
@@ -4889,12 +4894,12 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114975640977276310, guid: 20bee3b3d2d3f094aaad61e9057e4f4b,
         type: 2}
-      propertyPath: Target.Array.size
+      propertyPath: target.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114975640977276310, guid: 20bee3b3d2d3f094aaad61e9057e4f4b,
         type: 2}
-      propertyPath: Disable.Array.size
+      propertyPath: disable.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4357004715855118, guid: 20bee3b3d2d3f094aaad61e9057e4f4b, type: 2}
@@ -4931,7 +4936,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114975640977276310, guid: 20bee3b3d2d3f094aaad61e9057e4f4b,
         type: 2}
-      propertyPath: Disable.Array.data[0]
+      propertyPath: disable.Array.data[0]
       value: 
       objectReference: {fileID: 271789467}
     - target: {fileID: 114975640977276310, guid: 20bee3b3d2d3f094aaad61e9057e4f4b,
@@ -4946,12 +4951,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114975640977276310, guid: 20bee3b3d2d3f094aaad61e9057e4f4b,
         type: 2}
-      propertyPath: Target.Array.data[0]
+      propertyPath: target.Array.data[0]
       value: 
       objectReference: {fileID: 24352130}
     - target: {fileID: 114975640977276310, guid: 20bee3b3d2d3f094aaad61e9057e4f4b,
         type: 2}
-      propertyPath: Target.Array.data[1]
+      propertyPath: target.Array.data[1]
       value: 
       objectReference: {fileID: 336131156}
     - target: {fileID: 82632516621085100, guid: 20bee3b3d2d3f094aaad61e9057e4f4b,
@@ -5932,9 +5937,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21d9553b38a36a34e89e1d163b1ad539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Object: {fileID: 1917340941}
-  Distance: {x: 10, y: 18, z: -10}
-  Follow: 0.2
+  target: {fileID: 1917340941}
+  distance: {x: 10, y: 18, z: -10}
+  follow: 0.2
 --- !u!1001 &1429609839
 Prefab:
   m_ObjectHideFlags: 0
@@ -7334,11 +7339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 908c77d01eb8342409eb4925ecc47fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ground:
+  ground:
     serializedVersion: 2
     m_Bits: 256
-  Gravity: -40
-  Drag: {x: 1, y: 0.5, z: 1}
+  gravity: -40
+  drag: {x: 1, y: 0.5, z: 1}
   deathOnFall: 1
 --- !u!4 &1917340943
 Transform:

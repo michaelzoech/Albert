@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour {
 
-    public GameObject target;
+    [SerializeField]
+    private GameObject target;
 
     private TriggerTarget triggerTarget;
     private bool previousEnabled;

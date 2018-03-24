@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScaleOnTrigger : MonoBehaviour {
 
-    public float scaleBy = 2.0f;
+    [SerializeField]
+    private float scaleBy = 2.0f;
 
     private Trigger trigger;
     private float scaleOn;

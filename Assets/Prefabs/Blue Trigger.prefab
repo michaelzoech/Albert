@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114973853807578274}
   - component: {fileID: 82352680639761408}
   - component: {fileID: 114129167760435634}
+  - component: {fileID: 114257484042316584}
   m_Layer: 0
   m_Name: Blue Trigger
   m_TagString: Untagged
@@ -195,7 +196,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -219,6 +220,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a83fd16dc557540bc4141e2a32cf76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114257484042316584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1871879623448282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d9055980876c54dbecf45d311eb3e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: {r: 0, g: 0.7160001, b: 1, a: 0}
+  off: {r: 0.03292603, g: 0.23797585, b: 0.6397059, a: 0}
 --- !u!114 &114300387737479862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7517dbd989b6d84488db78019b85a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Goal: {fileID: 0}
+  Target: []
   Disable: []
   Enable: []
   Triggered: 0

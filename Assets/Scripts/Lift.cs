@@ -14,9 +14,9 @@ public class Lift : MonoBehaviour {
     private const float moveBySecond = 1.0f;
 
     [SerializeField]
-    float moveUpBy;
+    private float moveUpBy;
     [SerializeField]
-    float pause;
+    private float pause;
 
     private float initialY;
     private State state;

@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour {
 
-    public TriggerTarget[] Target;
-    public Trigger[] Disable;
-    public Trigger[] Enable;
-    public bool Triggered;
+    public bool Triggered { get { return triggered; } }
+
+    [SerializeField]
+    private TriggerTarget[] target;
+    [SerializeField]
+    private Trigger[] disable;
+    [SerializeField]
+    private Trigger[] enable;
+    [SerializeField]
+    private bool triggered;
 
     private float initialScaleY;
     private bool inTriggerRecursion;
 
     void Start() {
         initialScaleY = transform.localScale.y;
-        foreach (TriggerTarget trigger in Target) {
+        foreach (TriggerTarget trigger in target) {
             trigger.RegisterTrigger(this);
         }
     }
 
     void OnTriggerEnter(Collider other) {
-        if (Triggered) {
+        if (triggered) {
             return;
         }
 
@@ -33,24 +39,24 @@ public class Trigger : MonoBehaviour {
         Conditions.Assert(!(inTriggerRecursion & newState), "Recursion in trigger, backing out");
         inTriggerRecursion = true;
 
-        Triggered = newState;
+        triggered = newState;
 
         Vector3 scale  = transform.localScale;
-        scale.y = Triggered ? initialScaleY / 5.0f : initialScaleY;
+        scale.y = triggered ? initialScaleY / 5.0f : initialScaleY;
         transform.localScale = scale;
 
-        foreach (TriggerTarget trigger in Target) {
+        foreach (TriggerTarget trigger in target) {
             trigger.Trigger(this);
         }
 
-        if (Triggered && Disable != null) {
-            foreach (Trigger trigger in Disable) {
+        if (triggered && disable != null) {
+            foreach (Trigger trigger in disable) {
                 trigger.UpdateTriggerState(false);
             }
         }
 
-        if (Triggered && Enable != null) {
-            foreach (Trigger trigger in Enable) {
+        if (triggered && enable != null) {
+            foreach (Trigger trigger in enable) {
                 trigger.UpdateTriggerState(true);
             }
         }

@@ -8,9 +8,10 @@ public class GameController : MonoBehaviour {
 
     [SerializeField]
     private AudioClip gameOverAudio;
-    public Text ScoreText;
-
-    public GameObject debugPanel;
+    [SerializeField]
+    private Text ScoreText;
+    [SerializeField]
+    private GameObject debugPanel;
 
     private AudioSource audioSource;
     private int fuelCollected;

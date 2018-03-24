@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ColorOnTrigger : MonoBehaviour {
 
-    public Color on;
-    public Color off;
+    [SerializeField]
+    private Color on;
+    [SerializeField]
+    private Color off;
 
     private Trigger trigger;
     private Material material;

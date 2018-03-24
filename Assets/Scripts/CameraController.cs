@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    public GameObject Object;
-    public Vector3 Distance;
-    public float Follow = 0.2f;
+    [SerializeField]
+    private GameObject target;
+    [SerializeField]
+    private Vector3 distance;
+    [SerializeField]
+    private float follow = 0.2f;
 
     void Start() {
-        transform.position = Object.transform.position + Distance;
+        transform.position = target.transform.position + distance;
     }
 
     void Update() {
-        Vector3 wantedPosition = Object.transform.position + Distance;
-        transform.position = Vector3.Lerp(transform.position, wantedPosition, Follow);
+        Vector3 wantedPosition = target.transform.position + distance;
+        transform.position = Vector3.Lerp(transform.position, wantedPosition, follow);
     }
 }
