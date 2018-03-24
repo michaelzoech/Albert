@@ -12,22 +12,29 @@ public class PlayerController : MonoBehaviour {
     public float Gravity;
     public Vector3 Drag;
 
+    private GameController gameController;
     private CharacterController characterController;
     private PlayerInput playerInput;
     private Vector3 velocity;
+    private float lastHeightGrounded;
 
     void Start() {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         characterController = GetComponent<CharacterController>();
         //characterController.enableOverlapRecovery = true;
         characterController.detectCollisions = true;
         playerInput = GetComponent<PlayerInput>();
         velocity = new Vector3();
-
     }
 
     void Update() {
         if (characterController.isGrounded) {
             velocity.y = 0.0f;
+            lastHeightGrounded = transform.position.y;
+        }
+
+        if (lastHeightGrounded > transform.position.y + 3.5f) {
+            gameController.GameOver();
         }
 
         Vector3 move = new Vector3(playerInput.HorizontalMovement, 0.0f, playerInput.VerticalMovement);
