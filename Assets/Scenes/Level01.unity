@@ -415,6 +415,16 @@ Prefab:
       propertyPath: Disable.Array.data[0]
       value: 
       objectReference: {fileID: 1090450693}
+    - target: {fileID: 82749340524127344, guid: 5d088891a6dd7da44aafc8c7d44ce759,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266386823562310, guid: 5d088891a6dd7da44aafc8c7d44ce759,
+        type: 2}
+      propertyPath: Triggered
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d088891a6dd7da44aafc8c7d44ce759, type: 2}
   m_IsPrefabParent: 0
@@ -1486,6 +1496,11 @@ Prefab:
       propertyPath: Target.Array.data[1]
       value: 
       objectReference: {fileID: 336131156}
+    - target: {fileID: 82352680639761408, guid: 18c94775555ffe6458319fdb30aaa615,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18c94775555ffe6458319fdb30aaa615, type: 2}
   m_IsPrefabParent: 0
@@ -6251,7 +6266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1473062324}
   m_Layer: 0
-  m_Name: World2
+  m_Name: World 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
