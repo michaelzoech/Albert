@@ -6,43 +6,43 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-	[SerializeField]
-	private AudioClip gameOverAudio;
-	public Text ScoreText;
+    [SerializeField]
+    private AudioClip gameOverAudio;
+    public Text ScoreText;
 
-	public GameObject debugPanel;
+    public GameObject debugPanel;
 
-	private AudioSource audioSource;
-	private int fuelCollected;
-	private bool isGameOver;
+    private AudioSource audioSource;
+    private int fuelCollected;
+    private bool isGameOver;
 
-	void Start () {
-		fuelCollected = 0;
-		audioSource = GetComponent<AudioSource>();
-	}
+    void Start () {
+        fuelCollected = 0;
+        audioSource = GetComponent<AudioSource>();
+    }
 
-	void Update() {
-		if (Input.GetKeyDown(KeyCode.F1)) {
-			debugPanel.SetActive(!debugPanel.activeSelf);
-		}
-	}
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.F1)) {
+            debugPanel.SetActive(!debugPanel.activeSelf);
+        }
+    }
 
-	public void OnFuelCollected() {
-		fuelCollected++;
-		ScoreText.text = "Score: " + fuelCollected;
-	}
+    public void OnFuelCollected() {
+        fuelCollected++;
+        ScoreText.text = "Score: " + fuelCollected;
+    }
 
-	public void GameOver() {
-		if (isGameOver) {
-			return;
-		}
-		isGameOver = true;
-		StartCoroutine(LoadLevel());
-	}
+    public void GameOver() {
+        if (isGameOver) {
+            return;
+        }
+        isGameOver = true;
+        StartCoroutine(LoadLevel());
+    }
 
-	private IEnumerator LoadLevel() {
-		audioSource.PlayOneShot(gameOverAudio);
-		yield return new WaitForSeconds(gameOverAudio.length + 1.0f);
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-	}
+    private IEnumerator LoadLevel() {
+        audioSource.PlayOneShot(gameOverAudio);
+        yield return new WaitForSeconds(gameOverAudio.length + 1.0f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

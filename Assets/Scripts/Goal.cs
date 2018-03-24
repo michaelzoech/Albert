@@ -8,32 +8,32 @@ using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour {
 
-	private TriggerTarget triggerTarget;
-	private GameController gameController;
+    private TriggerTarget triggerTarget;
+    private GameController gameController;
 
-	private bool previousEnabled;
+    private bool previousEnabled;
 
-	void Start() {
-		gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
-		triggerTarget = GetComponent<TriggerTarget>();
-	}
+    void Start() {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        triggerTarget = GetComponent<TriggerTarget>();
+    }
 
-	void Update() {
-		if (triggerTarget != null && previousEnabled != triggerTarget.Enabled) {
-			SetEnabled(triggerTarget.Enabled);
-			previousEnabled = triggerTarget.Enabled;
-		}
-	}
+    void Update() {
+        if (triggerTarget != null && previousEnabled != triggerTarget.Enabled) {
+            SetEnabled(triggerTarget.Enabled);
+            previousEnabled = triggerTarget.Enabled;
+        }
+    }
 
-	void OnTriggerEnter(Collider other) {
-		if (triggerTarget != null && !triggerTarget.Enabled) {
-			return;
-		}
-		SceneManager.LoadScene("Outro");
-	}
+    void OnTriggerEnter(Collider other) {
+        if (triggerTarget != null && !triggerTarget.Enabled) {
+            return;
+        }
+        SceneManager.LoadScene("Outro");
+    }
 
-	private void SetEnabled(bool enabled) {
-		Material m = GetComponentInChildren<Renderer>().material;
-		m.SetFloat("_Animate", enabled ? 1.0f : 0.0f);
-	}
+    private void SetEnabled(bool enabled) {
+        Material m = GetComponentInChildren<Renderer>().material;
+        m.SetFloat("_Animate", enabled ? 1.0f : 0.0f);
+    }
 }

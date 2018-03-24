@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GameOverByTriggerExit : MonoBehaviour {
 
-	private GameController gameController;
+    private GameController gameController;
 
-	void Start() {
-		gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-	}
+    void Start() {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    }
 
-	void OnTriggerExit (Collider other) {
-		gameController.GameOver();	
-	}
+    void OnTriggerExit (Collider other) {
+        gameController.GameOver();	
+    }
 }
