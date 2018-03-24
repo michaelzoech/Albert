@@ -13,9 +13,9 @@ public class Lift : MonoBehaviour {
 
     private const float moveBySecond = 1.0f;
 
-    [SerializeField]
+    [Range(0.0f, 10.0f), SerializeField]
     private float moveUpBy;
-    [SerializeField]
+    [Range(0.0f, 10.0f), SerializeField]
     private float pause;
 
     private float initialY;

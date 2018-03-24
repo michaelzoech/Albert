@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour {
     private GameObject target;
     [SerializeField]
     private Vector3 distance;
-    [SerializeField]
+    [Range(0.0f, 1.0f), SerializeField]
     private float follow = 0.2f;
 
     void Start() {
