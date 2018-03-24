@@ -11,7 +11,7 @@ public class PlayerInput : MonoBehaviour {
 
     void Update() {
         Dash = Input.GetButtonDown("Fire3");
-        Jump = Input.GetButtonDown("Jump");
+        Jump = Input.GetButtonDown("Jump") || Input.GetButtonDown("Fire1");
         HorizontalMovement = Input.GetAxis("Horizontal");
         VerticalMovement = Input.GetAxis("Vertical");
     }
