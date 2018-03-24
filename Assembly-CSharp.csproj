@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Conditions.cs" />
      <Compile Include="Assets\Scripts\DebugPanel.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\GameOverByTriggerExit.cs" />
      <Compile Include="Assets\Scripts\Goal.cs" />
      <Compile Include="Assets\Scripts\Lift.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
