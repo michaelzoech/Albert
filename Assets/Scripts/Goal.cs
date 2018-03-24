@@ -9,12 +9,10 @@ using UnityEngine.SceneManagement;
 public class Goal : MonoBehaviour {
 
     private TriggerTarget triggerTarget;
-    private GameController gameController;
 
     private bool previousEnabled;
 
     void Start() {
-        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         triggerTarget = GetComponent<TriggerTarget>();
     }
 
