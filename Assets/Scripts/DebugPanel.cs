@@ -10,7 +10,7 @@ public class DebugPanel : MonoBehaviour {
 	private PlayerController playerController;
 
 	void Start () {
-		portals = GameObject.FindGameObjectsWithTag("Portal");
+		portals = GameObject.FindGameObjectsWithTag("Portal").OrderBy(portal => portal.name).ToArray();
 		playerController = FindObjectOfType<PlayerController>();
 
 		Dropdown dropdown = GameObject.Find("Beam Player Dropdown").GetComponent<Dropdown>();
