@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\ColorOnTrigger.cs" />
      <Compile Include="Assets\Scripts\Conditions.cs" />
      <Compile Include="Assets\Scripts\DebugPanel.cs" />
+     <Compile Include="Assets\Scripts\DrawNormals.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GameOverByTriggerExit.cs" />
      <Compile Include="Assets\Scripts\Goal.cs" />
