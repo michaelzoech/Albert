@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Portal.cs" />
      <Compile Include="Assets\Scripts\ScaleOnTrigger.cs" />
+     <Compile Include="Assets\Scripts\SceneFade.cs" />
      <Compile Include="Assets\Scripts\Trigger.cs" />
      <Compile Include="Assets\Scripts\TriggerTarget.cs" />
      <None Include="Assets\Shaders\GoalShader.shader" />

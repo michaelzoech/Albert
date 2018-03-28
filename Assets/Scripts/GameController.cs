@@ -14,12 +14,15 @@ public class GameController : MonoBehaviour {
     private GameObject debugPanel;
 
     private AudioSource audioSource;
+    private SceneFade sceneFade;
     private int fuelCollected;
     private bool isGameOver;
 
     void Start () {
         fuelCollected = 0;
         audioSource = GetComponent<AudioSource>();
+        sceneFade = GetComponent<SceneFade>();
+        sceneFade.StartFade(SceneFade.Direction.In);
     }
 
     void Update() {
@@ -43,7 +46,9 @@ public class GameController : MonoBehaviour {
 
     private IEnumerator LoadLevel() {
         audioSource.PlayOneShot(gameOverAudio);
-        yield return new WaitForSeconds(gameOverAudio.length + 1.0f);
+        yield return new WaitForSeconds(gameOverAudio.length);
+        sceneFade.StartFade(SceneFade.Direction.Out);
+        yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
