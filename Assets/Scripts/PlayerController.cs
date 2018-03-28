@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : BetterMonoBehaviour {
 
     private const float JumpHeight = 1.0f;
     private const float MoveSpeed = 15.0f;
@@ -26,11 +26,11 @@ public class PlayerController : MonoBehaviour {
     private float lastHeightGrounded;
 
     void Start() {
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        characterController = GetComponent<CharacterController>();
+        gameController = GetGameController();
+        characterController = GetComponentOrThrow<CharacterController>();
         //characterController.enableOverlapRecovery = true;
         //characterController.detectCollisions = true;
-        playerInput = GetComponent<PlayerInput>();
+        playerInput = GetPlayerInput();
         velocity = new Vector3();
     }
 

@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnimRotator.cs" />
      <Compile Include="Assets\Scripts\AudioOnTrigger.cs" />
+     <Compile Include="Assets\Scripts\BetterMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CollectFuel.cs" />
      <Compile Include="Assets\Scripts\ColorOnTrigger.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\Scripts\DrawNormals.cs" />
      <Compile Include="Assets\Scripts\ExtroController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\GameObjectExtensions.cs" />
      <Compile Include="Assets\Scripts\GameOverByTriggerExit.cs" />
      <Compile Include="Assets\Scripts\Goal.cs" />
      <Compile Include="Assets\Scripts\Lift.cs" />

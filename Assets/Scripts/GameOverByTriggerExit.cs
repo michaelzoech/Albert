@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameOverByTriggerExit : MonoBehaviour {
+public class GameOverByTriggerExit : BetterMonoBehaviour {
 
     private GameController gameController;
 
     void Start() {
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        gameController = GetGameController();
     }
 
     void OnTriggerExit (Collider other) {

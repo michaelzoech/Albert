@@ -10,8 +10,6 @@ public class GameController : MonoBehaviour {
     private AudioClip gameOverAudio;
     [SerializeField]
     private Text ScoreText;
-    [SerializeField]
-    private GameObject debugPanel;
 
     private AudioSource audioSource;
     private SceneFade sceneFade;
@@ -26,9 +24,6 @@ public class GameController : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.F1)) {
-            debugPanel.SetActive(!debugPanel.activeSelf);
-        }
     }
 
     public void OnFuelCollected() {

@@ -9,4 +9,10 @@ public static class Conditions {
             throw new Exception(message);
         }
     }
+
+    public static void NotNull<T>(T obj) {
+        if (obj == null) {
+            throw new Exception("Expected instance of type " + typeof(T).FullName + ", but was null");
+        }
+    }
 }

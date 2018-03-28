@@ -4,14 +4,21 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DebugPanel : MonoBehaviour {
+public class DebugPanel : BetterMonoBehaviour {
 
     private GameObject[] portals;
     private PlayerController playerController;
+    private PlayerInput playerInput;
+    private CanvasGroup group;
 
     void Start () {
         portals = GameObject.FindGameObjectsWithTag("Portal").OrderBy(portal => portal.name).ToArray();
         playerController = FindObjectOfType<PlayerController>();
+        playerInput = GetPlayerInput();
+
+        group = GetComponentOrThrow<CanvasGroup>();
+        group.alpha = 0.0f;
+        group.interactable = false;
 
         Dropdown dropdown = GameObject.Find("Beam Player Dropdown").GetComponent<Dropdown>();
         dropdown.AddOptions(portals.Select(o => new Dropdown.OptionData(o.name)).ToList());
@@ -25,11 +32,12 @@ public class DebugPanel : MonoBehaviour {
         deathOnFall.onValueChanged.AddListener(isOn => {
             playerController.DeathOnFall = isOn;
         });
-
-        gameObject.SetActive(false);
     }
     
     void Update () {
-        
+        if (playerInput.ToggleDebugPanel) {
+            group.interactable = !group.interactable;
+            group.alpha = group.interactable ? 1.0f : 0.0f;
+        }
     }
 }
