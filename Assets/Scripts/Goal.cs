@@ -6,7 +6,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Goal : MonoBehaviour {
+public class Goal : BetterMonoBehaviour {
 
     private TriggerTarget triggerTarget;
 
@@ -27,7 +27,7 @@ public class Goal : MonoBehaviour {
         if (triggerTarget != null && !triggerTarget.Enabled) {
             return;
         }
-        SceneManager.LoadScene("Outro");
+        GetGameController().LevelCompleted();
     }
 
     private void SetEnabled(bool enabled) {

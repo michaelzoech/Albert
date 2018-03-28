@@ -24,10 +24,10 @@ public class SceneFade : MonoBehaviour {
         float alpha = 0.0f;
         switch (direction) {
             case Direction.In:
-                alpha = Mathf.SmoothStep(1.0f, 0.0f, Time.time - startTime);
+                alpha = Mathf.SmoothStep(1.0f, 0.0f, timeDifference / duration);
                 break;
             case Direction.Out:
-                alpha = Mathf.SmoothStep(0.0f, 1.0f, Time.time - startTime);
+                alpha = Mathf.SmoothStep(0.0f, 1.0f, timeDifference / duration);
                 break;
         }
 
