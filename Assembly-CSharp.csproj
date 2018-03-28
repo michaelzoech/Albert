@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\GameObjectExtensions.cs" />
      <Compile Include="Assets\Scripts\GameOverByTriggerExit.cs" />
      <Compile Include="Assets\Scripts\Goal.cs" />
+     <Compile Include="Assets\Scripts\Hud.cs" />
      <Compile Include="Assets\Scripts\Lift.cs" />
      <Compile Include="Assets\Scripts\PlayerCamera.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

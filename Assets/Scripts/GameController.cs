@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
+    public delegate void OnScoreChanged(int oldScore, int newScore);
+
+    public event OnScoreChanged OnScoreChangedEvent;
+
     [SerializeField]
     private AudioClip gameOverAudio;
-    [SerializeField]
-    private Text ScoreText;
 
     private AudioSource audioSource;
     private SceneFade sceneFade;
@@ -28,7 +30,7 @@ public class GameController : MonoBehaviour {
 
     public void OnFuelCollected() {
         fuelCollected++;
-        ScoreText.text = "Score: " + fuelCollected;
+        OnScoreChangedEvent.Invoke(fuelCollected-1, fuelCollected);
     }
 
     public void GameOver() {
