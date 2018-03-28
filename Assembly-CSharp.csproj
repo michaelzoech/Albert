@@ -59,12 +59,11 @@
      <Compile Include="Assets\Scripts\Conditions.cs" />
      <Compile Include="Assets\Scripts\DebugPanel.cs" />
      <Compile Include="Assets\Scripts\DrawNormals.cs" />
+     <Compile Include="Assets\Scripts\ExtroController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GameOverByTriggerExit.cs" />
      <Compile Include="Assets\Scripts\Goal.cs" />
-     <Compile Include="Assets\Scripts\IntroController.cs" />
      <Compile Include="Assets\Scripts\Lift.cs" />
-     <Compile Include="Assets\Scripts\OutroController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Portal.cs" />
