@@ -20,7 +20,6 @@ public class TriggerTarget : MonoBehaviour {
         if (!Enabled) {
             return;
         }
-        Debug.Log("Hit at " + Time.time);
     }
 
     public void RegisterTrigger(Trigger trigger) {

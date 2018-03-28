@@ -50,7 +50,7 @@ public class Lift : BetterMonoBehaviour {
                 }
                 break;
             case State.MovingUp:
-                if (transform.position.y < initialY + moveUpBy) {
+                if ((initialY + moveUpBy) - transform.position.y > 0.1f) {
                     Vector3 pos = transform.position;
                     pos.y = Mathf.Min(transform.position.y + moveBySecond * Time.deltaTime, initialY + moveUpBy);
                     transform.position = pos;
@@ -59,7 +59,7 @@ public class Lift : BetterMonoBehaviour {
                 }
                 break;
             case State.MovingDown:
-                if (transform.position.y > initialY) {
+                if (transform.position.y - initialY > 0.1f) {
                     Vector3 pos = transform.position;
                     pos.y = Mathf.Max(transform.position.y - moveBySecond * Time.deltaTime, initialY);
                     transform.position = pos;
