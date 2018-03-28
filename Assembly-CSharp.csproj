@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\AudioOnTrigger.cs" />
      <Compile Include="Assets\Scripts\BetterMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\CollectFuel.cs" />
+     <Compile Include="Assets\Scripts\ColliderExtensions.cs" />
      <Compile Include="Assets\Scripts\ColorOnTrigger.cs" />
      <Compile Include="Assets\Scripts\Conditions.cs" />
      <Compile Include="Assets\Scripts\DebugPanel.cs" />

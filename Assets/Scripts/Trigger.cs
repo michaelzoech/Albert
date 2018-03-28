@@ -30,7 +30,7 @@ public class Trigger : MonoBehaviour {
             return;
         }
 
-        if (other.tag == "Player") {
+        if (other.IsPlayer()) {
             UpdateTriggerState(true);
         }
     }

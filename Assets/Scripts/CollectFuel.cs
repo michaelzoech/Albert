@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectFuel : MonoBehaviour {
+public class CollectFuel : BetterMonoBehaviour {
 
 	private GameController gameController;
 	private AudioSource audioSource;
 
 	void Start() {
-		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
-		gameController = gameControllerObject.GetComponent<GameController>();
+		gameController = GetGameController();
 		audioSource = GetComponent<AudioSource>();
 	}
 

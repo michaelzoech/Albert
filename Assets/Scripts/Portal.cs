@@ -25,7 +25,7 @@ public class Portal : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.tag != "Player") {
+        if (!other.IsPlayer()) {
             return;
         }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lift : MonoBehaviour {
+public class Lift : BetterMonoBehaviour {
 
     private enum State {
         Down,
@@ -25,7 +25,7 @@ public class Lift : MonoBehaviour {
     private GameController gameController;
 
     void Start () {
-        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        gameController = GetGameController();
         triggerTarget = GetComponent<TriggerTarget>();
         initialY = transform.position.y;
         state = State.Down;
@@ -75,7 +75,7 @@ public class Lift : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.tag != "Player") {
+        if (!other.IsPlayer()) {
             return;
         }
 
