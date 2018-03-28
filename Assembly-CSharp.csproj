@@ -54,7 +54,6 @@
      <Compile Include="Assets\Scripts\AnimRotator.cs" />
      <Compile Include="Assets\Scripts\AudioOnTrigger.cs" />
      <Compile Include="Assets\Scripts\BetterMonoBehaviour.cs" />
-     <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CollectFuel.cs" />
      <Compile Include="Assets\Scripts\ColorOnTrigger.cs" />
      <Compile Include="Assets\Scripts\Conditions.cs" />
@@ -66,6 +65,7 @@
      <Compile Include="Assets\Scripts\GameOverByTriggerExit.cs" />
      <Compile Include="Assets\Scripts\Goal.cs" />
      <Compile Include="Assets\Scripts\Lift.cs" />
+     <Compile Include="Assets\Scripts\PlayerCamera.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Portal.cs" />
