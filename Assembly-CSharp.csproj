@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Conditions.cs" />
      <Compile Include="Assets\Scripts\DebugPanel.cs" />
      <Compile Include="Assets\Scripts\DrawNormals.cs" />
+     <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\ExtroController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GameObjectExtensions.cs" />
